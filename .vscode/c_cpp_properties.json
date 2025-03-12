@@ -26,7 +26,13 @@
                 "${IDF_PATH}/components/esp_partition/include",
                 "${IDF_PATH}/components/bt/include/esp32c3/include",
                 "${IDF_PATH}/components/bt/host/bluedroid/api/include/api",
-                "${IDF_PATH}/components/esp_hid/include"
+                "${IDF_PATH}/components/esp_hid/include",
+                "${IDF_PATH}/components/esp_adc/include",
+                "${IDF_PATH}/components/hal/include",
+                "${IDF_PATH}/components/esp_adc/include/esp_adc",
+                "${IDF_PATH}/components/esp_adc/esp32c3/include",
+                "${IDF_PATH}/components/esp_driver_gpio/include",
+                "${IDF_PATH}/components/esp_timer/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
