@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "freertos.h": "c",
+        "freertosconfig.h": "c",
+        "assert.h": "c",
+        "portable.h": "c",
+        "portmacro.h": "c",
+        "portmacro_idf.h": "c",
+        "deprecated_definitions.h": "c",
+        "esp_task.h": "c",
+        "reent.h": "c",
+        "task.h": "c",
+        "esp_wifi.h": "c",
+        "esp_wifi_types.h": "c",
+        "esp_wifi_types_generic.h": "c",
+        "esp_event.h": "c",
+        "esp_wifi_default.h": "c",
+        "esp_netif.h": "c",
+        "stdint.h": "c",
+        "sdkconfig.h": "c",
+        "esp_netif_ip_addr.h": "c",
+        "esp_log.h": "c",
+        "esp_rom_sys.h": "c",
+        "nvs_flash.h": "c",
+        "esp_partition.h": "c"
+    }
+}

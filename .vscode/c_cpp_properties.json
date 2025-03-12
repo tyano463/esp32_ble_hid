@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${IDF_PATH}/components/freertos/FreeRTOS-Kernel/include",
+                "${IDF_PATH}/components/freertos/config/include/freertos",
+                "${IDF_PATH}/components/freertos/config/riscv/include",
+                "${IDF_PATH}/components/freertos/FreeRTOS-Kernel/portable/linux/include/freertos",
+                "${IDF_PATH}/components/esp_common/include",
+                "${IDF_PATH}/components/esp_system/include",
+                "${IDF_PATH}/components/freertos/config/include",
+                "${IDF_PATH}/components/freertos/FreeRTOS-Kernel/portable/linux/include",
+                "${IDF_PATH}/components/newlib/platform_include/sys",
+                "${IDF_PATH}/components/newlib/platform_include",
+                "${IDF_PATH}/components/esp_wifi/include",
+                "${IDF_PATH}/components/esp_event/include",
+                "${IDF_PATH}/components/esp_hw_support/include",
+                "${IDF_PATH}/components/esp_netif/include",
+                "${IDF_PATH}/components/linux/include",
+                "${IDF_PATH}/components/log/include",
+                "${IDF_PATH}/components/esp_rom/include",
+                "${IDF_PATH}/components/soc/esp32c3/include",
+                "${IDF_PATH}/components/nvs_flash/include",
+                "${IDF_PATH}/components/esp_partition/include",
+                "${IDF_PATH}/components/bt/include/esp32c3/include",
+                "${IDF_PATH}/components/bt/host/bluedroid/api/include/api",
+                "${IDF_PATH}/components/esp_hid/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "c++98",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
