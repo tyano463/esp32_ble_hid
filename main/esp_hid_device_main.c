@@ -245,9 +245,9 @@ void ble_hid_demo_task_mouse(void *pvParameters)
 #define USB_HID_COMMA 0x36
 #define USB_HID_DOT 0x37
 
-#define PIN_LED 0
-#define PIN_BUTTON 1
-#define PIN_MODE 1
+#define PIN_LED 5
+#define PIN_BUTTON 9
+#define PIN_MODE 10
 
 const unsigned char keyboardReportMap[] = {
     // 7 bytes input (modifiers, resrvd, keys*5), 1 byte output

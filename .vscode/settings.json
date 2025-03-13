@@ -28,5 +28,5 @@
         "adc_oneshot.h": "c",
         "gpio.h": "c"
     },
-    "idf.pythonInstallPath": "/home/tyano/.espressif/python_env/idf5.5_py3.13_env/bin/python"
+    "idf.pythonInstallPath": "/usr/bin/python"
 }
