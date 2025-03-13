@@ -48,6 +48,10 @@
 
 #include "dlog.h"
 
+#define PIN_LED 5
+#define PIN_BUTTON 9
+#define PIN_MODE 10
+
 typedef struct
 {
     TaskHandle_t task_hdl;
@@ -245,10 +249,6 @@ void ble_hid_demo_task_mouse(void *pvParameters)
 #define USB_HID_COMMA 0x36
 #define USB_HID_DOT 0x37
 
-#define PIN_LED 5
-#define PIN_BUTTON 9
-#define PIN_MODE 10
-
 const unsigned char keyboardReportMap[] = {
     // 7 bytes input (modifiers, resrvd, keys*5), 1 byte output
     0x05, 0x01, // Usage Page (Generic Desktop Ctrls)
@@ -375,14 +375,34 @@ void ble_hid_demo_task_kbd(void *pvParameters)
     /* TODO : Add support for function keys and ctrl, alt, esc, etc. */
     printf("%s\n", help_string);
     char c;
+    adc_oneshot_unit_handle_t adc_handle;
+    int adc_channel = ADC_CHANNEL_2;
+    int adc_data;
+    int button, temp;
+    gpio_init();
+    adc_init(&adc_handle, adc_channel);
+    button = 0;
     while (1)
     {
-        c = fgetc(stdin);
-
-        if (c != 255)
+        temp = button_state();
+        if (temp == button)
         {
-            send_keyboard(c);
+            vTaskDelay(1);
+            continue;
         }
+
+        button = temp;
+        if (button)
+        {
+            adc_data = adc_read(&adc_handle, adc_channel);
+            data_send(adc_data);
+        }
+//        c = fgetc(stdin);
+//
+//        if (c != 255)
+//        {
+//            send_keyboard(c);
+//        }
         vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
@@ -1044,30 +1064,6 @@ void app_main(void)
     }
 #endif
 
-    adc_oneshot_unit_handle_t adc_handle;
-    int adc_channel = ADC_CHANNEL_2;
-    int adc_data;
-    int button, temp;
-    gpio_init();
-    adc_init(&adc_handle, adc_channel);
-    button = 0;
-    while (1)
-    {
-        temp = button_state();
-        if (temp == button)
-        {
-            vTaskDelay(1);
-            continue;
-        }
-
-        button = temp;
-        if (button)
-        {
-            adc_data = adc_read(&adc_handle, adc_channel);
-            data_send(adc_data);
-        }
-        vTaskDelay(1);
-    }
 }
 
 static int adc_init(adc_oneshot_unit_handle_t *handle, int channel)
